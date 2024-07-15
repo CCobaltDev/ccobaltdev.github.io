@@ -1,0 +1,24 @@
+---
+import Window from '../components/Window.astro';
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Cobalt Bar | 404">
+	<Window title="Error 404">
+		<p id="pageText"><span style="color:rgb(100, 100, 255);">PAGE</span> does not exist.</p>
+		<div class="menu-container">
+			<p
+				class="menu"
+				onclick="history.back()"
+				style="cursor:pointer;"
+			>
+				Go back
+			</p>
+		</div>
+		<script type="module">
+			var element = document.getElementById('pageText');
+			var str = element.innerHTML.replace('PAGE', document.URL);
+			element.innerHTML = str;
+		</script>
+	</Window>
+</Layout>

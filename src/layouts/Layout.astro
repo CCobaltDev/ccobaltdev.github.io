@@ -1,0 +1,142 @@
+---
+import { ViewTransitions } from 'astro:transitions';
+
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html
+	lang="en"
+	transition:name="fade"
+>
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="description"
+			content="Cobalt Bar's Website"
+		/>
+		<meta
+			name="viewport"
+			content="width=device-width"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			href="/icon.png"
+		/>
+		<meta
+			name="generator"
+			content={Astro.generator}
+		/>
+		<title>{title}</title>
+		<ViewTransitions />
+	</head>
+	<body>
+		<slot />
+		<style is:global>
+			:root {
+				--background-color: rgba(50, 50, 50, 0.35);
+				--background-color-selected: rgba(100, 100, 100, 0.45);
+				--highlight: rgba(175, 175, 225, 0.45);
+				--highlight-selected: rgba(255, 255, 255, 0.55);
+			}
+
+			body {
+				background: radial-gradient(circle, rgba(0, 0, 135, 1), rgba(0, 0, 35, 1) 50%);
+				background-size: cover;
+				background-repeat: no-repeat;
+				background-position: center;
+				background-attachment: fixed;
+			}
+
+			h1,
+			h2,
+			h3,
+			h4,
+			h5,
+			p,
+			a {
+				font-family: 'JetBrainsMonoNF', monospace;
+				color: rgb(235, 235, 235);
+				padding-left: 15px;
+				padding-right: 15px;
+				padding-top: 15px;
+				overflow: hidden;
+			}
+
+			h1,
+			h2,
+			h3 {
+				text-align: center;
+			}
+
+			p,
+			a,
+			span {
+				font-weight: 500;
+				font-size: 20px;
+			}
+
+			span {
+				font-family: 'JetBrainsMonoNF', monospace;
+				color: rgb(235, 235, 235);
+				overflow: hidden;
+			}
+
+			a {
+				text-decoration: none;
+			}
+
+			img {
+				border-radius: 50%;
+				padding-left: 15px;
+				padding-right: 15px;
+				padding-top: 15px;
+			}
+
+			@font-face {
+				font-family: 'JetBrainsMonoNF';
+				src: url('/JetBrainsMonoNerdFont-Bold.ttf') format('ttf');
+			}
+
+			.menu {
+				margin: -20px 15px 15px 15px;
+				width: 125px;
+				height: 35px;
+				aspect-ratio: 3;
+				background-color: var(--background-color);
+				border: 1px solid var(--highlight);
+				border-radius: 8px;
+				box-shadow: 0px 0px 25px 5px rgba(0, 0, 0, 0.5);
+				backdrop-filter: blur(10px);
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				text-align: center;
+				padding-bottom: 15px;
+				transition:
+					transform 0.085s ease-in-out,
+					background-color 0.085s ease-in-out,
+					border 0.085s ease-in-out;
+			}
+
+			.menu:hover {
+				transform: scale(1.05);
+				background-color: var(--background-color-selected);
+				border: 1px solid var(--highlight-selected);
+			}
+
+			.menu-container {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+				justify-content: space-between;
+				justify-items: center;
+				row-gap: 45px;
+			}
+		</style>
+	</body>
+</html>

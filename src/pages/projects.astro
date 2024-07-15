@@ -1,0 +1,31 @@
+---
+import Window from '../components/Window.astro';
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Cobalt Bar | Projects">
+	<Window title="Projects">
+		<div class="menu-container">
+			<div
+				class="menu"
+				style="width: 225px; height: 140px;"
+			>
+				<img
+					src="https://github.com/CobaltBar/FNF-Horizon-Engine/blob/main/art/logo.png?raw=true	"
+					width="210px"
+					style="border-radius: 0%;cursor:pointer;"
+					alt="Horizon Engine"
+					onclick='window.open("https://github.com/CobaltBar/FNF-Horizon-Engine")'
+				/>
+			</div>
+		</div>
+		<div style="display:grid; padding-top:25px; justify-items: center;">
+			<a
+				href="/"
+				class="menu"
+			>
+				Home
+			</a>
+		</div>
+	</Window>
+</Layout>
