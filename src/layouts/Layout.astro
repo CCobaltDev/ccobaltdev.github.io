@@ -9,29 +9,13 @@ const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html
-	lang="en"
-	transition:name="fade"
->
+<html lang="en" transition:name="fade">
 	<head>
 		<meta charset="UTF-8" />
-		<meta
-			name="description"
-			content="Cobalt Bar's Website"
-		/>
-		<meta
-			name="viewport"
-			content="width=device-width"
-		/>
-		<link
-			rel="icon"
-			type="image/png"
-			href="/icon.png"
-		/>
-		<meta
-			name="generator"
-			content={Astro.generator}
-		/>
+		<meta name="description" content="Cobalt Bar's Website"/>
+		<meta name="viewport" content="width=device-width"/>
+		<link rel="icon" type="image/png" href="/images/icon.png"/>
+		<meta name="generator" content={Astro.generator}/>
 		<title>{title}</title>
 		<ViewTransitions />
 	</head>
@@ -93,7 +77,7 @@ const { title } = Astro.props;
 
 			@font-face {
 				font-family: 'JetBrainsMonoNF';
-				src: url('/JetBrainsMonoNerdFont-Bold.ttf') format('ttf');
+				src: url('/fonts/JetBrainsMonoNerdFont-Bold.ttf') format('ttf');
 			}
 
 			.menu {
