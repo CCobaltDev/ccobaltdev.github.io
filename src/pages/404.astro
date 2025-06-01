@@ -1,22 +1,24 @@
 ---
+import CommonPage from "../layouts/CommonPage.astro";
 import Window from "../components/Window.astro";
-import Layout from "../layouts/Layout.astro";
+import Button from "../components/Button.astro";
+import CodeBlock from "../components/CodeBlock.astro";
 ---
 
-<Layout title="CCobaltDev | 404">
-  <Window title="Error 404">
-    <p id="pageText">
-      <span style="color:rgb(100, 100, 255);">PAGE</span> does not exist.
-    </p>
-    <div class="menu-container">
-      <p class="menu" onclick="history.back()" style="cursor:pointer;">
-        Go back
-      </p>
-    </div>
-    <script type="module">
-      var element = document.getElementById("pageText");
-      var str = element.innerHTML.replace("PAGE", document.URL);
-      element.innerHTML = str;
-    </script>
-  </Window>
-</Layout>
+<CommonPage title="404">
+	<div class="flex flex-row min-h-screen justify-center items-center">
+		<Window class="flex flex-col justify-center items-center">
+			<h1 class="text-2xl text-center">Error 404 - Page not found</h1>
+			<br />
+			<p class="m-20" id="page">
+				Page <CodeBlock>--PAGE--</CodeBlock> does not exist.
+			</p>
+			<br />
+			<Button name="Go Home" link="/" />
+		</Window>
+	</div>
+	<script type="module">
+		var el = document.getElementById("page");
+		el.innerHTML = el.innerHTML.replace("--PAGE--", document.URL);
+	</script>
+</CommonPage>

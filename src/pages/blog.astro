@@ -1,0 +1,23 @@
+---
+import CommonPage from "../layouts/CommonPage.astro";
+import { defineCollection, z } from "astro:content";
+import Window from "../components/Window.astro";
+import { glob } from "astro/loaders";
+
+/*const posts = defineCollection({
+	loader: glob({ pattern: "*.md", base: "src/pages/blog" }),
+	schema: z.object({
+		name: z.string(),
+		description: z.string(),
+		publishDate: z.coerce.date(),
+	}),
+});*/
+---
+
+<CommonPage title="Blog">
+	<div class="flex flex-row min-h-screen justify-center items-center">
+		<Window>
+			<h1 class="text-4xl">UNDER CONSTRUCTION</h1>
+		</Window>
+	</div>
+</CommonPage>

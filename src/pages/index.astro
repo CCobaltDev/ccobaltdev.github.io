@@ -1,20 +1,38 @@
 ---
+import CommonPage from "../layouts/CommonPage.astro";
 import Window from "../components/Window.astro";
-import Layout from "../layouts/Layout.astro";
+import Cobalt from "../assets/cobalt.png";
+import { Image } from "astro:assets";
 ---
 
-<Layout title="CCobaltDev | Home">
-  <Window title="CCobaltDev" image="/images/icon.png">
-    <p>
-      Hello! I code, stream, and play games.<br /><br />
-      I program in Haxe (HaxeFlixel), C# (Unity) and Python.<br /><br />
-      I like Friday Night Funkin' and Terraria.<br /><br />
-      Formerly known as Cobalt Bar<br /><br />
-    </p>
-    <div class="menu-container">
-      <a href="/projects" class="menu">Projects</a>
-      <a href="/friends" class="menu">Friends</a>
-      <a href="/commissions" class="menu">Commissions</a>
-    </div>
-  </Window>
-</Layout>
+<CommonPage title="Index">
+	<div class="flex flex-row min-h-screen justify-center items-center">
+		<Window class="flex flex-row">
+			<div class="w-13/20">
+				<h1 class="text-4xl">Hi there!</h1>
+				<br />
+				<p>
+					I'm CCobaltDev. I'm a transfem lesbian who enjoys playing
+					games and programming.
+				</p>
+				<br />
+				<p>
+					This site is VERY much a work-in-progress, so it will change
+					in the future.
+				</p>
+			</div>
+			<div class="w-7/20 flex flex-col items-center mr-8">
+				<p class="text-center text-sm mb-3">
+					Art by
+					<a
+						class="text-white font-extrabold"
+						href="https://bsky.app/profile/cherrychii.bsky.social"
+					>
+						Chi
+					</a>
+				</p>
+				<Image src={Cobalt} alt="CCobaltDev's Persona" />
+			</div>
+		</Window>
+	</div>
+</CommonPage>

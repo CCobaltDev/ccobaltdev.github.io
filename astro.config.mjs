@@ -1,10 +1,12 @@
-import { defineConfig } from 'astro/config';
+// @ts-check
+import { defineConfig } from "astro/config";
+
+import tailwindcss from "@tailwindcss/vite";
 
 // https://astro.build/config
 export default defineConfig({
-	site:'https://cobalbar.github.io',
-	output: 'static',
-	build: {
-		assets: 'astro'
+	site: "https://ccobaltdev.github.io",
+	vite: {
+		plugins: [tailwindcss()],
 	}
 });

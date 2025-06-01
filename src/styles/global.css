@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+@font-face {
+	font-family: 'JetBrainsMono';
+	src: url('/fonts/JetBrainsMono-Regular.woff2') format('woff2');
+	font-weight: normal;
+	font-style: normal;
+}
+
+h1 {
+	font-weight: 800;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+a,
+span,
+div {
+	font-family: 'JetBrainsMono', 'sans-serif';
+	color: #e0e7ff;
+}

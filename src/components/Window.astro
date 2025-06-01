@@ -1,53 +1,15 @@
 ---
+import "../styles/global.css";
+
 interface Props {
-	title: string;
-	image?: string;
+	class?: string;
 }
 
-const { title, image } = Astro.props;
+const { class: className } = Astro.props;
 ---
 
-<div class="window">
-	<div class="header">
-		{image && (<img src={image} width="128px"/>)}
-		<h1>{title}</h1>
-	</div>
-	<div class="content">
-		<slot />
-	</div>
+<div
+	class:list={`backdrop-blur-lg bg-indigo-950/30 rounded-xl border-1 border-indigo-100/40 shadow-lg p-6 max-w-2xl ${className || ""}`}
+>
+	<slot />
 </div>
-
-<style>
-	.window {
-		margin: 0;
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		min-width: 600px;
-		max-width: 1280px;
-		aspect-ratio: 3/2;
-		background-color: rgba(50, 50, 50, 0.35);
-		border: 1px solid rgba(200, 200, 200, 0.4);
-		border-radius: 8px;
-		box-shadow: 0px 0px 25px 5px rgba(0, 0, 0, 0.5);
-		backdrop-filter: blur(10px);
-		display: flex;
-		flex-direction: column;
-	}
-
-	.header {
-		flex: 0 0 auto;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-	}
-
-	.content {
-		flex: 1 1 auto;
-		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
-		padding: 15px;
-	}
-</style>
