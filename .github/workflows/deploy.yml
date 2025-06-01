@@ -17,7 +17,7 @@ jobs:
             - name: Checkout git repository
               uses: actions/checkout@v4
             - name: Install, Build, and Upload site
-              uses: withastro/action@v2
+              uses: withastro/action@v4
     deploy:
         needs: build
         runs-on: ubuntu-latest
