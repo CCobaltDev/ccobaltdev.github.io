@@ -1,0 +1,18 @@
+---
+import "../styles/global.css";
+import { Image } from "astro:assets";
+
+interface Props {
+	link: string;
+	src: any;
+	alt: any;
+}
+const { link, src, alt } = Astro.props;
+---
+
+<a
+	class="bg-clip-padding backdrop-filter backdrop-blur-xl bg-indigo-950/35 rounded-xl border-1 border-indigo-100/35 shadow-xl flex justify-center items-center p-4 m-2"
+	href={link}
+>
+	<Image src={src} alt={alt} class="size-12" />
+</a>

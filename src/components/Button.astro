@@ -2,15 +2,14 @@
 import "../styles/global.css";
 
 interface Props {
-	name: string;
 	link: string;
 }
-const { name, link } = Astro.props;
+const { link } = Astro.props;
 ---
 
 <a
-	class="backdrop-blur-lg bg-indigo-950/30 rounded-xl border-1 border-indigo-100/40 shadow-lg min-w-25 min-h-12 ml-3 flex justify-center items-center"
+	class="bg-clip-padding backdrop-filter backdrop-blur-xl bg-indigo-950/35 rounded-xl border-1 border-indigo-100/35 shadow-xl min-w-25 min-h-12 flex justify-center items-center"
 	href={link}
 >
-	{name}
+	<slot />
 </a>

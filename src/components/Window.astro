@@ -9,7 +9,7 @@ const { class: className } = Astro.props;
 ---
 
 <div
-	class:list={`backdrop-blur-lg bg-indigo-950/30 rounded-xl border-1 border-indigo-100/40 shadow-lg p-6 max-w-2xl ${className || ""}`}
+	class:list={`bg-clip-padding backdrop-filter backdrop-blur-xl bg-indigo-950/35 rounded-xl border-1 border-indigo-100/35 shadow-xl p-6 m-2 max-w-2xl ${className || ""}`}
 >
 	<slot />
 </div>

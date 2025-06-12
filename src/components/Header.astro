@@ -4,10 +4,17 @@ import Window from "../components/Window.astro";
 import Button from "../components/Button.astro";
 ---
 
-<Window class="fixed min-w-screen max-h-20 flex flex-row items-center">
-	<h1 class="text-xl">CCobaltDev</h1>
-	<div class="ml-3 min-h-max w-0.5 self-stretch bg-indigo-100/50"></div>
-	<Button name="Home" link="/" />
-	<Button name="Blog" link="/blog" />
-	<Button name="Projects" link="/projects" />
-</Window>
+<header class="fixed inset-x-0 top-0 min-w-screen">
+	<Window
+		class="max-w-full max-h-20 flex flex-row items-center justify-center sm:justify-start !p-4 gap-4"
+	>
+		<h1 class="text-[0px] hidden sm:block sm:text-xl">CCobaltDev</h1>
+		<div
+			class="min-h-max hidden sm:block sm:w-0.5 sm:self-stretch bg-indigo-100/50"
+		>
+		</div>
+		<Button link="/">Home</Button>
+		<Button link="/blog">Blog</Button>
+		<Button link="/projects">Projects</Button>
+	</Window>
+</header>

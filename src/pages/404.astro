@@ -9,16 +9,15 @@ import CodeBlock from "../components/CodeBlock.astro";
 	<div class="flex flex-row min-h-screen justify-center items-center">
 		<Window class="flex flex-col justify-center items-center">
 			<h1 class="text-2xl text-center">Error 404 - Page not found</h1>
-			<br />
 			<p class="m-20" id="page">
 				Page <CodeBlock>--PAGE--</CodeBlock> does not exist.
 			</p>
-			<br />
-			<Button name="Go Home" link="/" />
+			<Button link="/">Go Home</Button>
 		</Window>
 	</div>
-	<script type="module">
+	<script>
 		var el = document.getElementById("page");
-		el.innerHTML = el.innerHTML.replace("--PAGE--", document.URL);
+		if (el != null)
+			el.innerHTML = el.innerHTML.replace("--PAGE--", document.URL);
 	</script>
 </CommonPage>
