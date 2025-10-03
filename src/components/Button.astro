@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import Window from "./Window.astro";
 
 interface Props {
 	link: string;
@@ -7,9 +8,10 @@ interface Props {
 const { link } = Astro.props;
 ---
 
-<a
-	class="bg-clip-padding backdrop-filter backdrop-blur-xl bg-indigo-950/35 rounded-xl border-1 border-indigo-100/35 shadow-xl min-w-25 min-h-12 flex justify-center items-center"
-	href={link}
->
-	<slot />
+<a href={link}>
+	<Window
+		class="min-w-25 min-h-12 flex justify-center items-center !mx-0 !p-0"
+	>
+		<slot />
+	</Window>
 </a>
