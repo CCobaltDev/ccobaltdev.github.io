@@ -12,7 +12,9 @@ const { link, src, alt } = Astro.props;
 ---
 
 <a href={link}>
-	<Window class="flex justify-center items-center !p-3 m-2">
+	<Window
+		class="flex justify-center items-center !p-3 m-2 transform transition duration-300 ease-in-out hover:scale-110"
+	>
 		<Image src={src} alt={alt} class="size-14" />
 	</Window>
 </a>
