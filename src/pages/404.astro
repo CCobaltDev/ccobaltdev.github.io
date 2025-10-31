@@ -13,7 +13,7 @@ import CodeBlock from "../components/CodeBlock.astro";
 		</p>
 		<Button link="/">Go Home</Button>
 	</Window>
-	<script>
+	<script data-astro-rerun>
 		var el = document.getElementById("page");
 		if (el != null)
 			el.innerHTML = el.innerHTML.replace("--PAGE--", document.URL);

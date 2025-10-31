@@ -11,36 +11,39 @@ export async function getStaticPaths() {
 				a.data.publish_date.getTime() - b.data.publish_date.getTime(),
 		)
 		.map((post, i) => ({
-			params: { id: i.toString() },
+			params: { id: (i + 1).toString() },
 			props: { post },
 		}));
 }
 
 const { post } = Astro.props;
-const { Content } = await render(post);
+const { Content, remarkPluginFrontmatter } = await render(post);
 ---
 
 <CommonPage title={post.data.name}>
-	<Window class="flex flex-col">
+	<Window class="mt-50 mb-25 flex flex-col">
 		<h1 class="text-3xl text-center">{post.data.name}</h1>
 		<p class="text-center">{post.data.description}</p>
 		<div class="flex justify-center items-center content-center">
-			<p class="px-2 text-xs !text-slate-300">
+			<p class="px-2 text-xs text-slate-300!">
 				Published on: {post.data.publish_date.toLocaleDateString()}
 			</p>
 			{
 				post.data.last_updated != null && (
-					<p class="px-2 text-xs !text-slate-300">
+					<p class="px-2 text-xs text-slate-300!">
 						Last Edited:{" "}
-						{post.data.last_updated?.toLocaleDateString()}
+						{post.data.last_updated.toLocaleDateString()}
 					</p>
 				)
 			}
-			<p class="px-2 text-xs !text-slate-300">
+			<p class="px-2 text-xs text-slate-300!">
 				Tags: {post.data.tags.join(", ")}
 			</p>
+			<p class="px-2 text-xs text-slate-300!">
+				{remarkPluginFrontmatter.minutesRead}
+			</p>
 		</div>
-		<div class="prose-invert prose-h1:text-2xl">
+		<div class="prose-invert prose-h1:text-2xl prose-p:wrap-anywhere">
 			<br />
 			<Content />
 		</div>
