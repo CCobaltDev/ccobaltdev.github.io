@@ -2,22 +2,22 @@
 import CommonPage from "../layouts/CommonPage.astro";
 import Window from "../components/Window.astro";
 import SocialMediaButton from "../components/SocialMediaButton.astro";
-import Cobalt from "../assets/cobalt.png";
+import PersonaArt from "../assets/cobalt.png";
 import BSkyLogo from "../assets/bluesky_media_kit_logo.svg";
-import GithubLogo from "../assets/GitHub_Invertocat_Light.svg";
+import GitHubLogo from "../assets/GitHub_Invertocat_Light.svg";
 import { Image } from "astro:assets";
 ---
 
 <CommonPage title="Home">
-	<div class="flex flex-col min-h-screen justify-center items-center">
-		<Window class="mt-25 flex flex-row">
-			<div class="w-7/10">
+	<div class="flex flex-col items-center mb-5 sm:mb-0">
+		<Window class="mt-25 flex flex-col sm:flex-row">
+			<div class="h-3/4 sm:w-3/4">
 				<h1 class="text-4xl">Hi there!</h1>
 				<br />
 				<p>
-					I'm CCobaltDev. I'm a transfem lesbian who enjoys playing
-					games and programming. I primarily code in Haxe, C#, C++,
-					and Python. You can find a list of my projects on Github.
+					I'm CCobaltDev. I'm a transfem lesbian programmer who enjoys
+					playing games. I primarily code in Haxe, C#, C++, and
+					Python.
 				</p>
 				<br />
 				<p>
@@ -25,23 +25,27 @@ import { Image } from "astro:assets";
 					in the future.
 				</p>
 			</div>
-			<div class="w-3/10 flex flex-col items-center mr-8">
+			<Window class="h-7/20 sm:w-7/20 flex flex-col items-center">
 				<p class="text-center text-sm mb-3">
 					Art by
 					<a
 						class="text-white font-extrabold"
-						href="https://bsky.app/profile/cherrychii.bsky.social"
+						href="https://bsky.app/profile/chidotnb.bsky.social"
 					>
 						Chi
 					</a>
 				</p>
-				<Image src={Cobalt} alt="CCobaltDev's Persona" />
-			</div>
+				<Image
+					src={PersonaArt}
+					alt="CCobaltDev's Persona"
+					class="object-contain h-150 sm:h-auto"
+				/>
+			</Window>
 		</Window>
 		<div class="flex flex-row justify-evenly items-center">
 			<SocialMediaButton
-				src={GithubLogo}
-				alt="Github Logo"
+				src={GitHubLogo}
+				alt="GitHub Logo"
 				link="https://github.com/CCobaltDev/"
 			/>
 			<SocialMediaButton

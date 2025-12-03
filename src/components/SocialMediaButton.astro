@@ -1,12 +1,11 @@
 ---
-import "../styles/global.css";
 import { Image } from "astro:assets";
 import Window from "./Window.astro";
 
 interface Props {
 	link: string;
-	src: any;
-	alt: any;
+	src: ImageMetadata;
+	alt: string;
 }
 const { link, src, alt } = Astro.props;
 ---
