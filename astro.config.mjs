@@ -4,21 +4,17 @@ import tailwindcss from "@tailwindcss/vite";
 import expressiveCode from "astro-expressive-code";
 import remarkToc from "remark-toc";
 import { remark_reading_time } from "./src/remark_reading_time.mjs";
-import mermaid from "astro-mermaid";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://ccobaltdev.github.io",
+	site: "https://ccobaltdev.github.io",
 
-  vite: {
-    plugins: [tailwindcss()],
-  },
+	vite: {
+		plugins: [tailwindcss()],
+	},
 
-  integrations: [
-    mermaid({
-      theme: 'dark'
-    }), expressiveCode()],
-  markdown: {
-    remarkPlugins: [[remarkToc, { heading: 'Contents' }], remark_reading_time]
-  }
+	integrations: [expressiveCode()],
+	markdown: {
+		remarkPlugins: [[remarkToc, { heading: 'Contents' }], remark_reading_time]
+	}
 });
