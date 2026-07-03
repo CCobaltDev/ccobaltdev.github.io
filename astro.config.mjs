@@ -2,6 +2,7 @@
 import { defineConfig } from "astro/config";
 import tailwindcss from "@tailwindcss/vite";
 import expressiveCode from "astro-expressive-code";
+import { unified } from "@astrojs/markdown-remark";
 import remarkToc from "remark-toc";
 import { remark_reading_time } from "./src/remark_reading_time.mjs";
 
@@ -15,6 +16,7 @@ export default defineConfig({
 
 	integrations: [expressiveCode()],
 	markdown: {
-		remarkPlugins: [[remarkToc, { heading: 'Contents' }], remark_reading_time]
-	}
+		processor: unified({ remarkPlugins: [[remarkToc, { heading: 'Contents' }], remark_reading_time] })
+	},
+
 });
