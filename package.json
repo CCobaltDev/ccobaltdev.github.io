@@ -9,17 +9,17 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.10",
-    "@astrojs/markdown-remark": "^7.3.1",
+    "@astrojs/check": "^0.9.12",
+    "@astrojs/markdown-remark": "^7.3.5",
     "@tailwindcss/typography": "^0.5.20",
     "@tailwindcss/vite": "^4.3.3",
-    "astro": "^7.3.4",
-    "astro-expressive-code": "^0.44.2",
+    "astro": "^7.4.3",
+    "astro-expressive-code": "^0.44.3",
     "mdast-util-to-string": "^4.0.0",
-    "mermaid": "^12.0.0",
+    "mermaid": "^12.2.0",
     "reading-time": "^1.5.0",
     "remark-toc": "^9.0.0",
-    "sharp": "^0.35.4",
+    "sharp": "^0.35.5",
     "tailwindcss": "^4.3.3",
     "typescript": "^7.0.2"
   }

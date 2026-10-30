@@ -21,8 +21,8 @@ const { Content, remarkPluginFrontmatter } = await render(post);
 ---
 
 <CommonPage title={post.data.name}>
-	<Window class="mt-50 mb-25 flex flex-col">
-		<h1 class="text-3xl text-center">{post.data.name}</h1>
+	<Window class="mt-50 mb-25 max-w-6xl! flex flex-col">
+		<h1 class="text-4xl text-center">{post.data.name}</h1>
 		<p class="text-center">{post.data.description}</p>
 		<div class="flex justify-center items-center content-center">
 			<p class="px-2 text-xs text-slate-300!">

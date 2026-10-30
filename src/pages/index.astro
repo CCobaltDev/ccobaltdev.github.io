@@ -5,19 +5,21 @@ import SocialMediaButton from "../components/SocialMediaButton.astro";
 import PersonaArt from "../assets/cobalt.png";
 import BSkyLogo from "../assets/bluesky_media_kit_logo.svg";
 import GitHubLogo from "../assets/GitHub_Invertocat_Light.svg";
+import HFLogo from "../assets/hf-logo.svg";
 import { Image } from "astro:assets";
 ---
 
 <PageBase title="Home">
 	<div class="flex flex-col items-center mb-5 sm:mb-0">
 		<Window class="mt-25 flex flex-col sm:flex-row">
-			<div class="h-3/4 sm:w-3/4">
+			<div class="h-3/4 sm:w-3/4 pr-4">
 				<h1 class="text-4xl">Hi there!</h1>
 				<br />
 				<p>
-					I'm CCobaltDev. I'm a transfem lesbian programmer who enjoys
-					playing games. I primarily code in Haxe, C#, C++, and
-					Python.
+					Hiya! I'm CCobaltDev. I code things and mess with computers.
+					I work with Python, C, C++, C#, Haxe, JavaScript,
+					TypeScript, and some others. I work across game development,
+					software engineering, and machine learning.
 				</p>
 			</div>
 			<Window class="sm:w-1/2 flex flex-col items-center">
@@ -47,6 +49,11 @@ import { Image } from "astro:assets";
 				src={BSkyLogo}
 				alt="Bluesky Logo"
 				link="https://bsky.app/profile/ccobaltdev.bsky.social"
+			/>
+			<SocialMediaButton
+				src={HFLogo}
+				alt="HuggingFace Logo"
+				link="https://huggingface.co/CCobaltDev"
 			/>
 		</div>
 	</div>
